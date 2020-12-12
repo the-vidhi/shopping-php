@@ -1,0 +1,25 @@
+<?php
+include 'conn.php';
+$u=$_POST["txtuname"];
+$p=$_POST["txtpass"];
+$n=$_POST["txtname"];
+$m=$_POST["txtmail"];
+
+$qry="insert into `homecon` values('$n','$m,'$u','$p')";
+$res=mysqli_query($con,$qry);
+
+//header("Location:main.php");
+
+
+
+?>
+
+
+<form method="post" action="main.php">
+	Name:<input type="text" name="txtname"><br><br>
+	E-mail:<input type="text" name="txtmail"><br><br>
+	Username:<input type="text" name="txtuname"><br><br>
+	Password:<input type="password" name="txtpass"><br><br>
+	<input type="submit" name="btnlog" value="Login"><br><br><br><br>
+
+</form>
